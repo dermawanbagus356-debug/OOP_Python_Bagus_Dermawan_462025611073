@@ -1,1 +1,27 @@
+# Parent Class
+class AlatPembayaran:
+    def proses_bayar(self):
+        print("Memproses pembayaran...")
 
+class KartuKredit(AlatPembayaran):
+    def proses_bayar(self):
+        print("Pembayaran berhasil menggunakan Kartu Kredit.")
+
+
+class EWallet(AlatPembayaran):
+    def proses_bayar(self):
+        print("Pembayaran berhasil menggunakan E-Wallet.")
+
+
+# Fungsi untuk Duck Typin
+def jalankan_transaksi(objek):
+    objek.proses_bayar()
+
+
+# Membuat objek
+kartu = KartuKredit()
+ewallet = EWallet()
+
+# Demonstrasi Duck Typing
+jalankan_transaksi(kartu)
+jalankan_transaksi(ewallet)
